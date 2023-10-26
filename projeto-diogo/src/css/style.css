@@ -1,0 +1,90 @@
+body {
+    background-color: #000000; /*cor do fundo*/
+    overflow: hidden; /*esconde o que transborda da tela tirando a escrol da tela*/
+}
+
+main::after {
+    content: "XDXDXD"; /*eh a impressao de elemento pelo css*/
+    position: fixed; /*fixa o elemento na tela em uma posicao especifica*/
+    top: 0;
+    left: 0;
+    min-height: 100vh; 
+    width: 100vw; /*delimita a largura o vw eh de viel port width*/
+
+    background: linear-gradient(-233deg, #000 25%, rgba(0, 0, 0, 0) 65%) no-repeat;
+}
+
+main .tela {
+    display: none; /*oculta todas as informacoes da tela*/
+    height: 100vh; /*diz que os elementos tem que ocupar a tela toda*/
+}
+
+main .tela.selecionado {
+    display: block; /*faz com que o elemento seja exibido no caso, a tela do Luffy*/
+}
+
+main .tela .imagem {
+    width: 100%; /*largura da imagem eh de 100% da tela*/
+    height: 100%; /*altura da imagem eh de 100% da tela*/
+    object-fit: cover; /*faz com que a imagem nao fique distorcida*/
+}
+
+.conteudo {
+    position: absolute; /*faz com que o objeto tenha prioridade de exibicao*/
+    top: 0; /*faz com que o objeto seja leavado para o topo*/
+    left: 120px; /*espaco criado a esquerda*/
+
+    display: flex; /*comando para organizar o texto*/
+    flex-direction: column; /*comando para organizar o texto de uma forma especifica*/
+    justify-content: center; /*diz onde o objeto vai ser colocado*/
+    min-height: 100vh; /*ciria espaco para que a escita possa ser centralizada, antes desse comando náo existe espaco para realocacao do objeto OBS - 100vh diz q o espaco criado eh toda a tela*/
+    max-width: 450px; /*delimita a largura q o texto vai ocupar*/
+    z-index: 1; /*ordena prioridades de exibicao, como no caso as outras classes n tem z-index essa classe sera prioritaria*/
+}
+
+.conteudo .titulo {
+    color: #ffffff; /*cor da fonte*/
+    font-size: 48px; /*tamanho da fonte*/
+    font-family: "Secular One"; /*familia da fonte*/
+    font-weight: 400; /*peso da fonte*/
+    margin-bottom: 20px; /*espacamento entre os elementos*/
+}
+
+.conteudo .descricao {
+    color: #ffffff;
+    font-family: "Rubik";
+    font-size: 16px;
+    line-height: 24px; /*espacamento entre as linhas do texto*/
+}
+
+.botoes {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 180px;
+    justify-content: center; /*alinhamento vertical*/
+    align-items: center; /*alinhamento horizontal*/
+    gap: 15px; /*espacamento entre os elementos utilizado quando o comando flex eh empregado a classe*/
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.botoes .botao {
+    border: none; /*tira as bordas*/
+    background: rgba(255, 255, 255, 0.363); /*tira o fundo*/
+    cursor: pointer; /*aparece a maozinha de click*/
+    border-radius: 50%;
+}
+
+.botoes .botao img {
+    max-height: 80px;
+    max-width: 80px;
+    border-radius: 50%; /*propriedade usada para fazer com que as coisas fiquem arredondadas*/
+}
+
+.botoes .botao.selecionado {
+    transform: scale(1.2); /*aumenta a escala*/
+    box-shadow: 0 0 10px #D9D9D9;
+}
